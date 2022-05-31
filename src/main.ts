@@ -21,6 +21,7 @@ import {
 } from "./graphql/mutations/mutations";
 
 export async function main(args?: string[]) {
+  console.log(process.env.apiKey);
   await getDbStats();
   if (args) {
     console.log(args);
@@ -35,9 +36,9 @@ export async function main(args?: string[]) {
     init("aspnetusers", usersQuery, poulateTableUsers);
     init("requests", requestsQuery, poulateTableRequests);
     init("addresses", addressesQuery, poulateTableAddresses);
-    init("aspnetuserprofile", userprofilesQuery, poulateTableUserprofiles);
+    init("userprofiles", userprofilesQuery, poulateTableUserprofiles);
     init(
-      "paymenttransactions",
+      "paymenttrasnsactions",
       paymenttrasnsactionsQuery,
       poulateTablePaymenttrasnsactions
     );
