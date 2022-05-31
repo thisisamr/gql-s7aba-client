@@ -20,3 +20,19 @@ export const unsafe = gql`
     unsafe
   }
 `;
+export const poulateTableUserprofiles = gql`
+  mutation initUserProfiles($input: [UserProfileInput!]) {
+    initUserProfiles(userProfiles: $input)
+  }
+`;
+export const poulateTableShippingorders = gql`
+  mutation initShippingOrders($input: [ShippingOrderInput!]) {
+    initShippingOrders(ShippingOrders: $input)
+  }
+`;
+
+export const poulateTablePaymenttrasnsactions = gql`
+  mutation initPaymentTransactions($input: [PaymentTransactionInput!]) {
+    initPaymentTransactions(paymentTransactions: $input)
+  }
+`;

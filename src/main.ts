@@ -5,12 +5,18 @@ import * as readline from "readline";
 const rl = readline.createInterface({ input, output });
 import {
   addressesQuery,
+  paymenttrasnsactionsQuery,
   requestsQuery,
+  shippingordersQuery,
+  userprofilesQuery,
   usersQuery,
 } from "./graphql/queries/queries";
 import {
   poulateTableAddresses,
+  poulateTablePaymenttrasnsactions,
   poulateTableRequests,
+  poulateTableShippingorders,
+  poulateTableUserprofiles,
   poulateTableUsers,
 } from "./graphql/mutations/mutations";
 
@@ -29,9 +35,14 @@ export async function main(args?: string[]) {
     init("aspnetusers", usersQuery, poulateTableUsers);
     init("requests", requestsQuery, poulateTableRequests);
     init("addresses", addressesQuery, poulateTableAddresses);
-    // init('aspnetuserprofile',usersQuery)
-    // init('paymenttrasnsactionshippingorder',usersQuery)
-    // init('paymenttrasnsactionrequestpricedifference',usersQuery)
+    init("aspnetuserprofile", userprofilesQuery, poulateTableUserprofiles);
+    init(
+      "paymenttransactions",
+      paymenttrasnsactionsQuery,
+      poulateTablePaymenttrasnsactions
+    );
+    init("shippingorders", shippingordersQuery, poulateTableShippingorders);
+
     rl.close();
   }
 }

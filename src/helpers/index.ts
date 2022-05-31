@@ -19,10 +19,19 @@ export async function getDbStats() {
           Addresses: arr[0].count,
           aspnetusers: arr[1].count,
           userprofiles: arr[2].count,
-          requests: arr[2].count,
+          requests: arr[3].count,
+          shippingorders: arr[4].count,
+          paymenttrasnsactions: arr[5].count,
         },
       ],
-      ["Addresses", "aspnetusers", "userprofiles", "requests"]
+      [
+        "Addresses",
+        "aspnetusers",
+        "userprofiles",
+        "requests",
+        "shippingorders",
+        "paymenttrasnsactions",
+      ]
     );
   } catch (error) {
     console.log(error);
