@@ -1,0 +1,19 @@
+{
+  "minify": true,
+  "jsc": {
+    "parser": {
+      "syntax": "typescript"
+    },
+    "target": "es2022"
+  },
+  "module": {
+    "type": "commonjs",
+
+    // These are defaults.
+    "strict": true,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false,
+    "ignoreDynamic": true
+  }
+}
