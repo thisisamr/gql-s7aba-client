@@ -137,6 +137,7 @@ export const requestsQuery = gql`
           unittype
           requeststatus
           area
+          areatype
           price
           requestnumber
           userid

@@ -25,7 +25,7 @@ function get(
   Sqlclient.query({
     query: query,
     variables: {
-      first: 20,
+      first: 100,
       after: cursor,
     },
   })
