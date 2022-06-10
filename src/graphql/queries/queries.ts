@@ -300,8 +300,6 @@ export const shippingordersQuery = gql`
           extracopiesprice
           orderstatus
           sync_status
-          shippingtype_name
-          shippingcenter_adress
         }
       }
     }
