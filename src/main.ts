@@ -8,10 +8,12 @@ import {
   paymenttrasnsactionsQuery,
   requestsQuery,
   shippingordersQuery,
+  useraddressesQuery,
   userprofilesQuery,
   usersQuery,
 } from "./graphql/queries/queries";
 import {
+  populateTableuseraddresses,
   poulateTableAddresses,
   poulateTablePaymenttrasnsactions,
   poulateTableRequests,
@@ -21,7 +23,6 @@ import {
 } from "./graphql/mutations/mutations";
 
 export async function main(args?: string[]) {
-  console.log(process.env.apiKey);
   await getDbStats();
   if (args) {
     console.log(args);
@@ -43,6 +44,7 @@ export async function main(args?: string[]) {
       poulateTablePaymenttrasnsactions
     );
     init("shippingorders", shippingordersQuery, poulateTableShippingorders);
+    init("useraddresses", useraddressesQuery, populateTableuseraddresses);
 
     rl.close();
   }

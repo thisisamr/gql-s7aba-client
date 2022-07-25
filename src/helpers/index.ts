@@ -22,6 +22,7 @@ export async function getDbStats() {
           requests: arr[3].count,
           shippingorders: arr[4].count,
           paymenttrasnsactions: arr[5].count,
+          useraddresses: arr[6].count,
         },
       ],
       [
@@ -31,6 +32,7 @@ export async function getDbStats() {
         "requests",
         "shippingorders",
         "paymenttrasnsactions",
+        "useraddresses",
       ]
     );
   } catch (error) {
@@ -88,14 +90,15 @@ export async function TruncateAllTables() {
         }
         if (errors) {
           errors.map((e) => console.log(e));
-          throw new ApolloError({
-            errorMessage: "somthing went wrong could not clear db successfully",
-          });
           reject(errors);
+          throw new ApolloError({
+            errorMessage:
+              "Something went wrong could not clear db successfully",
+          });
         }
       })
       .catch((e) => {
-        console.log(e);
+        console.error(e);
       });
   });
 }

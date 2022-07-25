@@ -145,6 +145,8 @@ export const requestsQuery = gql`
           modifieddate
           createdby
           id
+          subunittype
+          subunittypearea
         }
       }
     }
@@ -300,6 +302,30 @@ export const shippingordersQuery = gql`
           extracopiesprice
           orderstatus
           sync_status
+        }
+      }
+    }
+  }
+`;
+export const useraddressesQuery = gql`
+  query useraddressesQuery($first: Int!, $after: Int) {
+    useraddressesQuery(first: $first, after: $after) {
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      edges {
+        cursor
+        node {
+          id
+          description
+          districtid
+          userprofileid
+          addeddate
+          modifieddate
+          createdby
+          updatedby
+          regionid
         }
       }
     }
